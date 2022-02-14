@@ -133,11 +133,7 @@ class DiscordMusicBot extends Client {
     );
 
     this.Manager = new Manager({
-      plugins: [
-        new deezer(),
-        new apple(),
-        new facebook(),
-      ],
+      plugins: [new deezer(), new apple(), new facebook()],
       nodes: [
         {
           identifier: this.botconfig.Lavalink.id,
@@ -187,7 +183,13 @@ class DiscordMusicBot extends Client {
           .setColor(this.botconfig.EmbedColor)
           .setTimestamp();
         client.channels.cache.get(player.textChannel).send(QueueEmbed);
-        if (!this.botconfig["24/7"]) player.destroy();
+        /*
+        setTimeout(() => { 
+          if (player.paused || player.playing ||  player.queue.length > 0) return;
+          player.destroy();
+          //if (!this.botconfig["24/7"]) player.destroy();
+        }, 5*1000);
+        */
       });
   }
 

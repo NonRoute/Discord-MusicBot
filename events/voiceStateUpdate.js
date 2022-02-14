@@ -68,6 +68,7 @@ module.exports = async (client, oldState, newState) => {
       }
       break;
     case "LEAVE":
+      /*
       if (stateChange.members.size === 0 && !player.paused && player.playing) {
         player.pause(true);
 
@@ -76,6 +77,15 @@ module.exports = async (client, oldState, newState) => {
           .setColor(client.botconfig.EmbedColor)
           .setDescription(`The player has been paused because everybody left`);
         await client.channels.cache.get(player.textChannel).send(emb);
+      }
+      */
+      if (stateChange.members.size === 0 && !player.paused) {
+        let emb = new MessageEmbed()
+          .setAuthor(`Goodbye!`, client.botconfig.IconURL)
+          .setColor(client.botconfig.EmbedColor)
+          .setDescription(`I'm leaving because everybody left`);
+        client.channels.cache.get(player.textChannel).send(emb);
+        player.destroy();
       }
       break;
   }
