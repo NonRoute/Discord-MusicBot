@@ -66,6 +66,7 @@
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
+    "ms": "^2.1.3",
     "node-fetch": "2.6.6",
     "os": "^0.1.2",
     "pretty-ms": "^7.0.1",
@@ -73,6 +74,10 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "node": "^16.13.2",
     "prettier": "2.5.1"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }

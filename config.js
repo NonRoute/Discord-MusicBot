@@ -1,7 +1,7 @@
 module.exports = {
-  token: process.env.token || "", //Bot's Token
-  clientId: process.env.clientId || "", //ID of the bot
-  clientSecret: process.env.clientSecret || "", //Client Secret of the bot
+  token: process.env.token || process.env['TOKEN'], //Bot's Token
+  clientId: process.env.clientId || process.env['CLIENT_ID'], //ID of the bot
+  clientSecret: process.env.clientSecret || process.env['CLIENT_SECRET'], //Client Secret of the bot
   port: 3000, //Port of the API and Dashboard
   scopes: ["identify", "guilds", "applications.commands"], //Discord OAuth2 Scopes
   serverDeafen: true, //If you want bot to stay deafened
@@ -15,12 +15,12 @@ module.exports = {
   nodes: [
     {
       identifier: "Main",
-      host: "",
-      port: 80,
-      password: "",
+      host: "lavalink-replit.nonroute1.repl.co",
+      port: 443,
+      password: "maybeiwasboring",
       retryAmount: 5, //- Optional
       retryDelay: 1000, //- Optional
-      //secure: true //- Optional | Default: false
+      secure: true //- Optional | Default: false
     },
   ],
   embedColor: "BLUE", //Color of the embeds, hex supported
