@@ -73,27 +73,10 @@ module.exports = {
         let Searched = await node.load(SearchString);
 
         if (Searched.loadType === "PLAYLIST_LOADED") {
-          let songs = [];
-          for (let i = 0; i < Searched.tracks.length; i++)
-            songs.push(TrackUtils.build(Searched.tracks[i], message.author));
-          player.queue.add(songs);
-          if (
-            !player.playing &&
-            !player.paused &&
-            player.queue.totalSize === Searched.tracks.length
-          )
-            player.play();
-          SongAddedEmbed.setAuthor(
-            `Playlist added to queue`,
-            message.author.displayAvatarURL()
+          return client.sendTime(
+            message.channel,
+            "❌ | **You cannot use this command with playlist!**"
           );
-          SongAddedEmbed.addField(
-            "Enqueued",
-            `\`${Searched.tracks.length}\` songs`,
-            false
-          );
-          //SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.tracks, { colonNotation: true })}\``, false)
-          Searching.edit(SongAddedEmbed);
         } else if (Searched.loadType.startsWith("TRACK")) {
           player.queue.add(
             TrackUtils.build(Searched.tracks[0], message.author)
@@ -138,34 +121,10 @@ module.exports = {
             "**No matches found for - **" + SearchString
           );
         else if (Searched.loadType == "PLAYLIST_LOADED") {
-          player.queue.add(Searched.tracks);
-          if (
-            !player.playing &&
-            !player.paused &&
-            player.queue.totalSize === Searched.tracks.length
-          )
-            player.play();
-          SongAddedEmbed.setAuthor(
-            `Playlist added to queue`,
-            client.botconfig.IconURL
+          return client.sendTime(
+            message.channel,
+            "❌ | **You cannot use this command with playlist!**"
           );
-          // SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
-          SongAddedEmbed.setDescription(
-            `[${Searched.playlist.name}](${SearchString})`
-          );
-          SongAddedEmbed.addField(
-            "Enqueued",
-            `\`${Searched.tracks.length}\` songs`,
-            false
-          );
-          SongAddedEmbed.addField(
-            "Playlist duration",
-            `\`${prettyMilliseconds(Searched.playlist.duration, {
-              colonNotation: true,
-            })}\``,
-            false
-          );
-          Searching.edit(SongAddedEmbed);
         } else {
           player.queue.add(Searched.tracks[0]);
           if (!player.playing && !player.paused && !player.queue.size)
@@ -324,30 +283,10 @@ module.exports = {
             }
 
           case "PLAYLIST_LOADED":
-            let songs = [];
-            for (let i = 0; i < Searched.tracks.length; i++)
-              songs.push(TrackUtils.build(Searched.tracks[i], member.user));
-            player.queue.add(songs);
-            if (
-              !player.playing &&
-              !player.paused &&
-              player.queue.totalSize === Searched.tracks.length
-            )
-              player.play();
-            let Playlist = new MessageEmbed();
-            Playlist.setAuthor(
-              `Playlist added to queue`,
-              client.botconfig.IconURL
+            let embed = new MessageEmbed().setDescription(
+              "❌ | **You cannot use this command with playlist!**"
             );
-            Playlist.setDescription(
-              `[${Searched.playlistInfo.name}](${interaction.data.options[0].value})`
-            );
-            Playlist.addField(
-              "Enqueued",
-              `\`${Searched.tracks.length}\` songs`,
-              false
-            );
-            return interaction.send(Playlist);
+            return interaction.send(embed);
         }
       } else {
         try {
@@ -404,30 +343,10 @@ module.exports = {
             }
 
           case "PLAYLIST_LOADED":
-            player.queue.add(res.tracks);
-            await player.play();
-            let SongAdded = new MessageEmbed();
-            SongAdded.setAuthor(
-              `Playlist added to queue`,
-              client.botconfig.IconURL
+            let embed = new MessageEmbed().setDescription(
+              "❌ | **You cannot use this command with playlist!**"
             );
-            //SongAdded.setThumbnail(res.tracks[0].displayThumbnail());
-            SongAdded.setDescription(
-              `[${res.playlist.name}](${interaction.data.options[0].value})`
-            );
-            SongAdded.addField(
-              "Enqueued",
-              `\`${res.tracks.length}\` songs`,
-              false
-            );
-            SongAdded.addField(
-              "Playlist duration",
-              `\`${prettyMilliseconds(res.playlist.duration, {
-                colonNotation: true,
-              })}\``,
-              false
-            );
-            return interaction.send(SongAdded);
+            return interaction.send(embed);
           case "SEARCH_RESULT":
             const track = res.tracks[0];
             player.queue.add(track);
