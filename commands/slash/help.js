@@ -46,7 +46,7 @@ const command = new SlashCommand()
           "\n" +
           `[✨ Support Server](${client.config.supportServer}) | [Issues](${client.config.Issues}) | [Github](https://github.com/SudhanPlayz/Discord-MusicBot/) | [Invite Me](https://discord.com/oauth2/authorize?client_id=${client.config.clientId}&permissions=${client.config.permissions}&scope=bot%20applications.commands)`
       );
-    return interaction.reply({ embeds: [helpEmbed], ephemeral: true });
+    return interaction.reply({ embeds: [helpEmbed] });
   });
 
 module.exports = command;
