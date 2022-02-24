@@ -91,6 +91,15 @@ module.exports = async (client, oldState, newState) => {
             .send({ embeds: [playerPaused] });
         }
       }
+
+      if (stateChange.members.size === 0 && !player.paused) {
+        let emb = new MessageEmbed()
+          .setAuthor(`Goodbye!`, client.botconfig.IconURL)
+          .setColor(client.botconfig.EmbedColor)
+          .setDescription(`I'm leaving because everybody left`);
+        client.channels.cache.get(player.textChannel).send(emb);
+        player.destroy();
+      }
       break;
   }
 };

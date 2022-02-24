@@ -18,8 +18,8 @@ module.exports = {
       host: "lavalink-replit.nonroute1.repl.co",
       port: 443,
       password: "maybeiwasboring",
-      retryAmount: 5, //- Optional
-      retryDelay: 1000, //- Optional
+      retryAmount: 100, //- Optional
+      retryDelay: 30000, //- Optional
       secure: true //- Optional | Default: false
     },
   ],
