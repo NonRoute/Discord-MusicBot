@@ -34,7 +34,9 @@
     "homepage": "https://github.com/SudhanPlayz/Discord-MusicBot#readme",
     "dependencies": { <<
         <<
-        << < HEAD "@discordjs/builders": "^0.7.0",
+        <<
+        <
+        HEAD "@discordjs/builders": "^0.7.0",
         "@discordjs/rest": "^0.1.0-canary.0",
         "axios": "^0.25.0",
         "better-erela.js-apple": "^0.1.0",
@@ -50,7 +52,9 @@
         "erela.js-filters": "^1.2.6",
         ||
         ||
-        || | c590fce "colors": "^1.4.0",
+        ||
+        |
+        c590fce "colors": "^1.4.0",
         "cpu-stat": "^2.0.1",
         "discord.js": "^12.5.3",
         "discordjs-activity": "1.2.0",
@@ -68,17 +72,22 @@
         "erela.js-facebook": "^1.0.4",
         >>>
         >>>
-        > master "express": "^4.17.1",
+        >
+        master "express": "^4.17.1",
         <<
         <<
-        << < HEAD "express-rate-limit": "^6.2.0",
+        <<
+        <
+        HEAD "express-rate-limit": "^6.2.0",
         "express-session": "^1.17.2",
         "express-ws": "^5.0.2",
         "js-yaml": "^4.1.0",
         "jsoning": "^0.13.0",
         ||
         ||
-        || | c590fce "express-session": "^1.17.1",
+        ||
+        |
+        c590fce "express-session": "^1.17.1",
         "jsoning": "^0.11.0",
         "lavasfy": "2.1.2",
         ===
@@ -89,16 +98,21 @@
         "lavasfy": "2.3.0",
         >>>
         >>>
-        > master "lodash": "^4.17.21",
+        >
+        master "lodash": "^4.17.21",
         "moment": "^2.29.1",
         "moment-duration-format": "^2.3.2",
         <<
         <<
-        << < HEAD "node-fetch": "2.6.6",
+        <<
+        <
+        HEAD "node-fetch": "2.6.6",
         "os": "^0.1.2",
         ||
         ||
-        || | c590fce "mongoose": "^5.12.3",
+        ||
+        |
+        c590fce "mongoose": "^5.12.3",
         "node-fetch": "^2.6.1",
         "passport": "^0.4.1",
         "passport-discord": "^0.1.4",
@@ -111,15 +125,20 @@
         "passport-discord": "^0.1.4",
         >>>
         >>>
-        > master "pretty-ms": "^7.0.1",
+        >
+        master "pretty-ms": "^7.0.1",
         "systeminformation": "^5.9.12",
         "winston": "^3.3.3"
     },
     "devDependencies": { <<
         <<
-        << < HEAD "prettier": "2.5.1" ||
+        <<
+        <
+        HEAD "prettier": "2.5.1" ||
             ||
-            || | c590fce "prettier": "2.4.1" ===
+            ||
+            |
+            c590fce "prettier": "2.4.1" ===
             ===
             =
             "husky": "7.0.4",
@@ -129,6 +148,7 @@
     "lint-staged": {
         "*.{js,json,md}": "prettier --write" >>>
             >>>
-            > master
+            >
+            master
     }
 }
