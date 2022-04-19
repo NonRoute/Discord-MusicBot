@@ -1,4 +1,5 @@
 module.exports = {
+  adminId: "UserId", // Admin of the bot
   token: process.env.token || "", //Bot's Token
   clientId: process.env.clientId || "", //ID of the bot
   clientSecret: process.env.clientSecret || "", //Client Secret of the bot
@@ -8,7 +9,7 @@ module.exports = {
   defaultVolume: 100, //Sets the default volume of the bot, You can change this number anywhere from 1 to 100
   supportServer: "https://discord.gg/sbySMS7m3v", //Support Server Link
   Issues: "https://github.com/SudhanPlayz/Discord-MusicBot/issues", //Bug Report Link
-  permissions: 826839002433, //Bot Inviting Permissions
+  permissions: 277083450689, //Bot Inviting Permissions
   disconnectTime: 30000, //How long should the bot wait before disconnecting from the voice channel. in miliseconds. set to 1 for instant disconnect.
   alwaysplay: true, // when set to true music will always play no matter if theres no one in voice channel.
   debug: false, //Debug mode
@@ -16,12 +17,12 @@ module.exports = {
   // The default one should work fine.
   nodes: [
     {
-      identifier: "Losing time, Montreal.", //- Used for indentifier in stats commands.
-      host: "losingtime.dpaste.org",
-      port: 2124,
-      password: "SleepingOnTrains",
-      retryAmount: 15, //- The amount of times to retry connecting to the node if connection got dropped.
-      retryDelay: 6000, //- Delay between reconnect attempts if connection is lost.
+      identifier: "Main Node", //- Used for indentifier in stats commands.
+      host: "lavalink.darrenofficial.com",
+      port: 80,
+      password: "hellothere",
+      retryAmount: 200, //- The amount of times to retry connecting to the node if connection got dropped.
+      retryDelay: 40, //- Delay between reconnect attempts if connection is lost.
       secure: false, //- Can be either true or false. Only use true if ssl is enabled!
     },
   ],
